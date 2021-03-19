@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/phone"
+        android:id="@+id/nav1"
+        android:icon="@drawable/browser"
+
+        />
+    <item android:title="@string/chat"
+        android:icon="@drawable/icon_trending"
+        android:id="@+id/nav2"
+        />
+    <item android:title="@string/scan"
+        android:id="@+id/nav3"
+        android:icon="@drawable/portfolio"
+        />
+    <item android:title="@string/swipe"
+        android:id="@+id/nav4"
+        android:icon="@drawable/account"
+        />
+    <item android:title="@string/wallet_cn"
+        android:id="@+id/nav5"
+        android:icon="@drawable/wallet"
+        />
+
+</menu>

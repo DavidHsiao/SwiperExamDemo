@@ -7,6 +7,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    dataBinding{
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "android.example.com.swiperexamdemo"
         minSdkVersion 19
@@ -42,4 +46,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+
+    implementation 'com.google.android.material:material:1.2.1'
 }

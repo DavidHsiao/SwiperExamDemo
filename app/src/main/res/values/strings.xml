@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SwiperExamDemo</string>
+    <string name="wallet">Wallet</string>
+    <string name="wallet_cn">錢包</string>
+    <string name="phone">電話</string>
+    <string name="chat">聊天</string>
+    <string name="scan">掃描</string>
+    <string name="swipe">滑吧</string>
 </resources>
