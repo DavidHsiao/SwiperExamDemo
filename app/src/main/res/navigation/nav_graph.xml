@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/walletFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/walletFragment">
 
     <fragment
-        android:id="@+id/walletFragment"
-        android:name="android.example.com.swiperexamdemo.wallet.WalletFragment"
-        android:label="WalletFragment"
-        tools:layout="@layout/fragment_wallet"/>
+            android:id="@+id/walletFragment"
+            android:name="android.example.com.swiperexamdemo.wallet.WalletFragment"
+            android:label="WalletFragment"
+            tools:layout="@layout/fragment_wallet" />
+    <fragment
+            android:id="@+id/phoneFragment"
+            android:name="android.example.com.swiperexamdemo.phone.PhoneFragment"
+            android:label="PhoneFragment"
+            tools:layout="@layout/fragment_phone" />
+    <fragment
+            android:id="@+id/chatFragment"
+            android:name="android.example.com.swiperexamdemo.caht.ChatFragment"
+            android:label="ChatFragment"
+            tools:layout="@layout/fragment_chat"/>
+    <fragment
+            android:id="@+id/swipeFragment"
+            android:name="android.example.com.swiperexamdemo.swipe.SwipeFragment"
+            android:label="SwipeFragment" />
 </navigation>
