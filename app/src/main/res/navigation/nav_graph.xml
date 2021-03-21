@@ -24,4 +24,8 @@
             android:id="@+id/swipeFragment"
             android:name="android.example.com.swiperexamdemo.swipe.SwipeFragment"
             android:label="SwipeFragment" />
+    <fragment
+            android:id="@+id/walletPagerFragment"
+            android:name="android.example.com.swiperexamdemo.wallet.subFragment.WalletPagerFragment"
+            android:label="WalletPagerFragment" />
 </navigation>
