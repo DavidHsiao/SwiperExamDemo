@@ -6,4 +6,7 @@
     <string name="scan">掃描</string>
     <string name="swipe">滑吧</string>
     <string name="store">Store</string>
+    <string name="coin_record">容幣紀錄</string>
+    <string name="voucher">兌換卷</string>
+
 </resources>
