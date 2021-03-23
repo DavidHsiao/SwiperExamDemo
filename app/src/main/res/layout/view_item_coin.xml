@@ -7,206 +7,207 @@
 
         <variable
                 name="data"
-                type="android.example.com.swiperexamdemo.data.Reward" />
+                type="android.example.com.swiperexamdemo.data.DataStructure" />
     </data>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:id="@+id/ll_coin_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground"
-                    android:paddingBottom="12dp"
-                    tools:background="@color/pale_blue">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:paddingBottom="12dp"
+                tools:background="@color/pale_blue">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/icon"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/ic_launcher"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:id="@+id/icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/coin_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="容幣"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        app:layout_constraintStart_toEndOf="@+id/icon"
-                        app:layout_constraintTop_toTopOf="@+id/icon" />
+                    android:id="@+id/coin_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@{data.name}"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/icon"
+                    app:layout_constraintTop_toTopOf="@+id/icon" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/coin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="XNC（無限錢包）"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/icon"
-                        app:layout_constraintStart_toEndOf="@+id/icon" />
+                    android:id="@+id/coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="XNC（無限錢包）"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon"
+                    app:layout_constraintStart_toEndOf="@+id/icon" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/mtv_coin_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:text="9,102,619"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/coin_name"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                    android:id="@+id/mtv_coin_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="9,102,619"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/coin_name"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/mtv_xnc_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:text=".123"
-                        android:textSize="12dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/coin"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                    android:id="@+id/mtv_xnc_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=".123"
+                    android:textSize="12dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/coin"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <androidx.core.widget.ContentLoadingProgressBar
-                        android:id="@+id/progress_bar"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:indeterminate="false"
-                        android:progressDrawable="@drawable/bg_progress_bar_horizontal"
-                        android:max="100"
-                        android:progress="80"
-                        app:layout_constraintEnd_toStartOf="@+id/progress_text"
-                        app:layout_constraintStart_toStartOf="@+id/icon"
-                        app:layout_constraintTop_toBottomOf="@+id/icon" />
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="80"
+                    android:progressDrawable="@drawable/bg_progress_bar_horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/progress_text"
+                    app:layout_constraintStart_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/icon" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/progress_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:text="328天到期"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/progress_bar" />
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="328天到期"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/progress_bar" />
 
                 <View
-                        android:id="@+id/form_bg"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/bg_grey_radius_4"
-                        app:layout_constraintBottom_toBottomOf="@+id/reward3_title"
-                        app:layout_constraintEnd_toEndOf="@+id/mtv_coin_num"
-                        app:layout_constraintStart_toStartOf="@+id/icon"
-                        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+                    android:id="@+id/form_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_grey_radius_4"
+                    app:layout_constraintBottom_toBottomOf="@+id/reward3_title"
+                    app:layout_constraintEnd_toEndOf="@+id/mtv_coin_num"
+                    app:layout_constraintStart_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward1_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="20dp"
-                        android:text="互動獎勵"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintStart_toStartOf="@+id/icon"
-                        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+                    android:id="@+id/reward1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="互動獎勵"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward1_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="26dp"
-                        android:text="+681.213"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/reward1_title"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                    android:id="@+id/reward1_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="26dp"
+                    android:text="+681.213"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/reward1_title"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward2_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="社群獎勵"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintStart_toStartOf="@+id/icon"
-                        app:layout_constraintTop_toBottomOf="@+id/reward1_title" />
+                    android:id="@+id/reward2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="社群獎勵"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/reward1_title" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward2_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="+1.849"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/reward2_title"
-                        app:layout_constraintEnd_toEndOf="@+id/reward1_value" />
+                    android:id="@+id/reward2_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="+1.849"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/reward2_title"
+                    app:layout_constraintEnd_toEndOf="@+id/reward1_value" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward3_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:paddingBottom="8dp"
-                        android:text="收入"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintStart_toStartOf="@+id/icon"
-                        app:layout_constraintTop_toBottomOf="@+id/reward2_title" />
+                    android:id="@+id/reward3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="收入"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/reward2_title" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/reward3_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="+1793.729"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/reward3_title"
-                        app:layout_constraintEnd_toEndOf="@+id/reward1_value" />
+                    android:id="@+id/reward3_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="+1793.729"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/reward3_title"
+                    app:layout_constraintEnd_toEndOf="@+id/reward1_value" />
 
                 <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/more_detail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
-                        android:text="更多詳情"
-                        android:textColor="@color/primaryColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/form_bg" />
+                    android:id="@+id/more_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="更多詳情"
+                    android:textColor="@color/primaryColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/form_bg" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

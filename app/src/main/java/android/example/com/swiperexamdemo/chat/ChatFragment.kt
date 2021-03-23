@@ -1,4 +1,4 @@
-package android.example.com.swiperexamdemo.caht
+package android.example.com.swiperexamdemo.chat
 
 import android.example.com.swiperexamdemo.R
 import android.os.Bundle

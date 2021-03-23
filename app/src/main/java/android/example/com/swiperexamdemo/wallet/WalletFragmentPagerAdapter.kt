@@ -1,15 +1,15 @@
 package android.example.com.swiperexamdemo.wallet
 
-import android.example.com.swiperexamdemo.wallet.subFragment.WalletPagerFragment
+import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinFragment
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class WalletFragmentPagerAdapter(fa: Fragment) : FragmentStateAdapter(fa){
+class WalletFragmentPagerAdapter(private val fragList: List<Fragment>, parent: Fragment) : FragmentStateAdapter(parent){
     override fun getItemCount(): Int {
-        return 2
+        return fragList.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        return WalletPagerFragment()
+        return fragList[position]
     }
 }

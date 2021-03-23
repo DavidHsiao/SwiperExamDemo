@@ -17,15 +17,22 @@
             tools:layout="@layout/fragment_phone" />
     <fragment
             android:id="@+id/chatFragment"
-            android:name="android.example.com.swiperexamdemo.caht.ChatFragment"
+            android:name="android.example.com.swiperexamdemo.chat.ChatFragment"
             android:label="ChatFragment"
             tools:layout="@layout/fragment_chat"/>
     <fragment
             android:id="@+id/swipeFragment"
             android:name="android.example.com.swiperexamdemo.swipe.SwipeFragment"
-            android:label="SwipeFragment" />
+            android:label="SwipeFragment"
+        tools:layout="@layout/fragment_swipe"/>
     <fragment
             android:id="@+id/walletPagerFragment"
-            android:name="android.example.com.swiperexamdemo.wallet.subFragment.WalletPagerFragment"
-            android:label="WalletPagerFragment" />
+            android:name="android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinFragment"
+            android:label="WalletPagerFragment"
+        tools:layout="@layout/fragment_wallet_pager_coin"/>
+    <fragment
+        android:id="@+id/walletVoucherFragment"
+        android:name="android.example.com.swiperexamdemo.wallet.subFragVoucher.WalletVoucherFragment"
+        android:label="WalletVoucherFragment"
+        tools:layout="@layout/fragment_wallet_pager_voucher"/>
 </navigation>

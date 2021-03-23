@@ -1,6 +1,8 @@
 package android.example.com.swiperexamdemo.wallet
 
 import android.example.com.swiperexamdemo.databinding.FragmentWalletBinding
+import android.example.com.swiperexamdemo.wallet.subFragVoucher.WalletVoucherFragment
+import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,8 +29,13 @@ class WalletFragment : Fragment() {
         // 讓Data Binding依照Fragment的lifecycle來觀察LiveData
         binding.lifecycleOwner = this
 
-        binding.viewPager2.adapter = WalletFragmentPagerAdapter(this)
+        binding.viewPager2.adapter = WalletFragmentPagerAdapter(createFragList(), this)
 
         return binding.root
     }
+
+    private fun createFragList(): List<Fragment> {
+        return mutableListOf(WalletCoinFragment(), WalletVoucherFragment())
+    }
+
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="android.example.com.swiperexamdemo.data.DataStructure" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_voucher_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_voucher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:minHeight="50dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{data.name}"
+                tools:text="兌換卷" />
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</layout>

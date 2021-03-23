@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="android.example.com.swiperexamdemo.MainActivity">
 
     <data>
-        <variable
-                name="viewModel"
-                type="android.example.com.swiperexamdemo.wallet.subFragment.WalletPagerFragment" />
-    </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <variable
+            name="viewModel"
+            type="android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinViewModel" />
+    </data>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="android.example.com.swiperexamdemo.MainActivity">
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:listWallet="@{viewModel.data}"
+            tools:itemCount="2"
+            tools:listitem="@layout/view_item_coin" />
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-                tools:itemCount="2"
-                tools:listitem="@layout/view_item_coin"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    app:listData="@{viewModel.data}"-->
 </layout>
