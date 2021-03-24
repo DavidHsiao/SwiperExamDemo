@@ -15,10 +15,10 @@ class WalletVoucherViewModel : ViewModel() {
         get() = _data
 
     init {
-        getTaipeiZooArea()
+        setVoucherData()
     }
 
-    private fun getTaipeiZooArea() {
+    private fun setVoucherData() {
         data.value = mutableListOf(
             VoucherDataStructure("兌換券A", 0),
             VoucherDataStructure("兌換券B", 1),

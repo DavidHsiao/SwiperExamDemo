@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="android.example.com.swiperexamdemo.wallet.WalletViewModel" />

@@ -17,10 +17,10 @@ class WalletCoinViewModel : ViewModel() {
         get() = _data
 
     init {
-        getTaipeiZooArea()
+        setCoinData()
     }
 
-    private fun getTaipeiZooArea() {
+    private fun setCoinData() {
         data.value = mutableListOf(WalletDataStructure("容幣A",imgUrl, 0), WalletDataStructure("容幣B",imgUrl, 1))
     }
 

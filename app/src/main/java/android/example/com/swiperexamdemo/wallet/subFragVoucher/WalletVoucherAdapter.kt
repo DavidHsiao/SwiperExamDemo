@@ -3,8 +3,6 @@ package android.example.com.swiperexamdemo.wallet.subFragVoucher
 
 import android.example.com.swiperexamdemo.data.VoucherDataStructure
 import android.example.com.swiperexamdemo.databinding.ItemVoucherBinding
-import android.example.com.swiperexamdemo.databinding.ViewItemCoinBinding
-import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinAdapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -22,26 +20,22 @@ class WalletVoucherAdapter : ListAdapter<VoucherDataStructure, WalletVoucherAdap
             binding.executePendingBindings()
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletVoucherAdapter.WalletVoucherViewHolder {
-        return WalletVoucherAdapter.WalletVoucherViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletVoucherViewHolder {
+        return WalletVoucherViewHolder(
             ItemVoucherBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
 
-    override fun onBindViewHolder(holder: WalletVoucherAdapter.WalletVoucherViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WalletVoucherViewHolder, position: Int) {
         val data = getItem(position)
-        // 呼叫onClick Function
-//        holder.itemView.setOnClickListener {
-//            onClickListener.onClick(zooArea)
-//        }
 
         holder.bind(data)
 
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<VoucherDataStructure>() {
-        // 用此判斷item是不是同樣的item並且在smae position (用ID判斷)
+        // 用此判斷item是不是同樣的item並且在same position (用ID判斷)
         override fun areItemsTheSame(oldItem: VoucherDataStructure, newItem: VoucherDataStructure): Boolean {
             return oldItem._id == newItem._id
         }
