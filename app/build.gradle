@@ -63,5 +63,7 @@ dependencies {
     // Add the RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    // Add the Glide library dependency
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
 
 }

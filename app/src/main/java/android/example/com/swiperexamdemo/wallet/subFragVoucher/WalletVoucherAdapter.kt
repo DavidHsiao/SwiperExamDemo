@@ -1,6 +1,7 @@
 package android.example.com.swiperexamdemo.wallet.subFragVoucher
 
-import android.example.com.swiperexamdemo.data.DataStructure
+
+import android.example.com.swiperexamdemo.data.VoucherDataStructure
 import android.example.com.swiperexamdemo.databinding.ItemVoucherBinding
 import android.example.com.swiperexamdemo.databinding.ViewItemCoinBinding
 import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinAdapter
@@ -11,9 +12,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class WalletVoucherAdapter : ListAdapter<DataStructure, WalletVoucherAdapter.WalletVoucherViewHolder>(DiffCallback) {
+class WalletVoucherAdapter : ListAdapter<VoucherDataStructure, WalletVoucherAdapter.WalletVoucherViewHolder>(DiffCallback) {
     class WalletVoucherViewHolder(private var binding: ItemVoucherBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: DataStructure) {
+        fun bind(data: VoucherDataStructure) {
             binding.llVoucherDetail.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             binding.data = data
             // This is important, because it forces the data binding to execute immediately,
@@ -39,13 +40,13 @@ class WalletVoucherAdapter : ListAdapter<DataStructure, WalletVoucherAdapter.Wal
 
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<DataStructure>() {
+    companion object DiffCallback : DiffUtil.ItemCallback<VoucherDataStructure>() {
         // 用此判斷item是不是同樣的item並且在smae position (用ID判斷)
-        override fun areItemsTheSame(oldItem: DataStructure, newItem: DataStructure): Boolean {
+        override fun areItemsTheSame(oldItem: VoucherDataStructure, newItem: VoucherDataStructure): Boolean {
             return oldItem._id == newItem._id
         }
 
-        override fun areContentsTheSame(oldItem: DataStructure, newItem: DataStructure): Boolean {
+        override fun areContentsTheSame(oldItem: VoucherDataStructure, newItem: VoucherDataStructure): Boolean {
             return oldItem == newItem
         }
     }

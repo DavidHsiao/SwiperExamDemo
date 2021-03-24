@@ -1,6 +1,6 @@
 package android.example.com.swiperexamdemo.wallet.subFragWallet
 
-import android.example.com.swiperexamdemo.data.DataStructure
+import android.example.com.swiperexamdemo.data.WalletDataStructure
 import android.example.com.swiperexamdemo.databinding.ViewItemCoinBinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-    class WalletCoinAdapter : ListAdapter<DataStructure, WalletCoinAdapter.WalletPagerViewHolder>(DiffCallback) {
+    class WalletCoinAdapter : ListAdapter<WalletDataStructure, WalletCoinAdapter.WalletPagerViewHolder>(DiffCallback) {
 
         class WalletPagerViewHolder(private var binding: ViewItemCoinBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(data: DataStructure) {
+            fun bind(data: WalletDataStructure) {
                 binding.llCoinDetail.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 binding.data = data
                 // This is important, because it forces the data binding to execute immediately,
@@ -39,13 +39,13 @@ import androidx.recyclerview.widget.RecyclerView
 
         }
 
-        companion object DiffCallback : DiffUtil.ItemCallback<DataStructure>() {
+        companion object DiffCallback : DiffUtil.ItemCallback<WalletDataStructure>() {
             // 用此判斷item是不是同樣的item並且在smae position (用ID判斷)
-            override fun areItemsTheSame(oldItem: DataStructure, newItem: DataStructure): Boolean {
+            override fun areItemsTheSame(oldItem: WalletDataStructure, newItem: WalletDataStructure): Boolean {
                 return oldItem._id == newItem._id
             }
 
-            override fun areContentsTheSame(oldItem: DataStructure, newItem: DataStructure): Boolean {
+            override fun areContentsTheSame(oldItem: WalletDataStructure, newItem: WalletDataStructure): Boolean {
                 return oldItem == newItem
             }
         }

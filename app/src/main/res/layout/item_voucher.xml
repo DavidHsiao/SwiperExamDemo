@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="android.example.com.swiperexamdemo.data.DataStructure" />
+            type="android.example.com.swiperexamdemo.data.VoucherDataStructure" />
     </data>
 
     <LinearLayout

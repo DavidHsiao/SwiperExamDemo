@@ -10,14 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.tabs.TabLayoutMediator
 
 class WalletFragment : Fragment() {
+
+    private lateinit var binding:FragmentWalletBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentWalletBinding.inflate(inflater)
+        binding = FragmentWalletBinding.inflate(inflater)
 
         // 建立ViewModelFactory
         val viewModelFactory = WalletViewModelFactory()
@@ -42,7 +47,6 @@ class WalletFragment : Fragment() {
                 }
             }
         }.attach()
-
 
         return binding.root
     }
