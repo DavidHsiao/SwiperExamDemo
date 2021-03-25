@@ -10,5 +10,7 @@
     <string name="voucher">兌換卷</string>
     <string name="ad">AD</string>
     <string name="ad_msg">美麗新診所-全新FLX電波拉皮推薦 | 900發只要79990天天電波日。</string>
+    <string name="more_info">更多詳情</string>
+    <string name="less_info">顯示較少</string>
 
 </resources>

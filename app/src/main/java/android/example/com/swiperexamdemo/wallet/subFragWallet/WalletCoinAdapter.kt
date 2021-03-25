@@ -1,15 +1,19 @@
 package android.example.com.swiperexamdemo.wallet.subFragWallet
 
+import android.animation.ValueAnimator
 import android.example.com.swiperexamdemo.R
 import android.example.com.swiperexamdemo.data.WalletDataStructure
 import android.example.com.swiperexamdemo.databinding.ViewItemCoinBinding
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.view_item_coin.view.*
 
 private val ITEM_VIEW_TYPE_FOOTER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
@@ -19,6 +23,8 @@ class WalletCoinAdapter : ListAdapter<WalletDataStructure, RecyclerView.ViewHold
 
     class WalletPagerViewHolder(private var binding: ViewItemCoinBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        var originalHeight = 0
+        var isViewExpanded : Boolean = false
         fun bind(data: WalletDataStructure) {
             binding.llCoinDetail.layoutParams = LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -74,6 +80,11 @@ class WalletCoinAdapter : ListAdapter<WalletDataStructure, RecyclerView.ViewHold
         when (holder) {
             is WalletPagerViewHolder -> {
                 val data = getItem(position)
+
+                holder.itemView.more_detail.setOnClickListener{
+                    onClick(holder)
+                }
+
                 holder.bind(data)
             }
         }
@@ -87,7 +98,7 @@ class WalletCoinAdapter : ListAdapter<WalletDataStructure, RecyclerView.ViewHold
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<WalletDataStructure>() {
-        // 用此判斷item是不是同樣的item並且在smae position (用ID判斷)
+        // 用此判斷item是不是同樣的item並且在same position (用ID判斷)
         override fun areItemsTheSame(
             oldItem: WalletDataStructure,
             newItem: WalletDataStructure
@@ -101,5 +112,37 @@ class WalletCoinAdapter : ListAdapter<WalletDataStructure, RecyclerView.ViewHold
         ): Boolean {
             return oldItem == newItem
         }
+    }
+
+    private fun onClick(holder: WalletPagerViewHolder){
+        val view = holder.itemView.cl_coin_detail
+        holder.isViewExpanded
+        if(holder.originalHeight == 0){
+            holder.originalHeight = view.height
+        }
+
+        // Declare a ValueAnimator object
+        val valueAnimator: ValueAnimator
+        if(!holder.isViewExpanded) {
+            holder.isViewExpanded = true
+            // These values in this method can be changed to expand however much you like
+            valueAnimator = ValueAnimator.ofInt(holder.originalHeight, (holder.originalHeight + (holder.originalHeight * 2.0)).toInt())
+            holder.itemView.more_detail.text = holder.itemView.context.getString(R.string.less_info)
+
+        }
+        else{
+            holder.isViewExpanded = false
+            valueAnimator = ValueAnimator.ofInt((holder.originalHeight + (holder.originalHeight * 2.0)).toInt(), holder.originalHeight)
+            holder.itemView.more_detail.text = holder.itemView.context.getString(R.string.more_info)
+        }
+        valueAnimator.duration = 200;
+        valueAnimator.interpolator = AccelerateDecelerateInterpolator()
+        valueAnimator.addUpdateListener { valueAnimator ->
+            val value = valueAnimator?.animatedValue
+            view.layoutParams.height = value as Int
+            view.requestLayout();
+        }
+        valueAnimator.start();
+
     }
 }
