@@ -1,7 +1,5 @@
 package android.example.com.swiperexamdemo.data
 
-import androidx.versionedparcelable.VersionedParcelize
-
 data class WalletDataStructure(
     val name: String,
     val imgUrl: String,

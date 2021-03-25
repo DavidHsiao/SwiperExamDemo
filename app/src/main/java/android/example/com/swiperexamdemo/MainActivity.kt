@@ -1,7 +1,10 @@
 package android.example.com.swiperexamdemo
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.example.com.swiperexamdemo.databinding.ActivityMainBinding
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -37,13 +40,14 @@ class MainActivity : AppCompatActivity() {
         navController.popBackStack()
         when (item.itemId) {
             R.id.nav_phone -> {
+
                 navController.navigate(R.id.phoneFragment)
             }
             R.id.nav_chat -> {
                 navController.navigate(R.id.chatFragment)
             }
             R.id.nav_scan -> {
-                navController.navigate(R.id.walletFragment)
+                dispatchTakePictureIntent()
             }
             R.id.nav_swipe -> {
                 navController.navigate(R.id.swipeFragment)
@@ -54,5 +58,17 @@ class MainActivity : AppCompatActivity() {
         }
         true
     }
+
+    val REQUEST_IMAGE_CAPTURE = 1
+
+    private fun dispatchTakePictureIntent() {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+        } catch (e: ActivityNotFoundException) {
+            // display error state to the user
+        }
+    }
+
 
 }

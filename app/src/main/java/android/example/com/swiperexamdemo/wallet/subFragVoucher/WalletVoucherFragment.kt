@@ -1,9 +1,6 @@
 package android.example.com.swiperexamdemo.wallet.subFragVoucher
 
-import android.example.com.swiperexamdemo.databinding.FragmentWalletPagerCoinBinding
 import android.example.com.swiperexamdemo.databinding.FragmentWalletPagerVoucherBinding
-import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinAdapter
-import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

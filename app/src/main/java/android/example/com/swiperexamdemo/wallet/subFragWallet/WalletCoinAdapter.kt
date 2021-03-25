@@ -4,7 +4,6 @@ import android.animation.ValueAnimator
 import android.example.com.swiperexamdemo.R
 import android.example.com.swiperexamdemo.data.WalletDataStructure
 import android.example.com.swiperexamdemo.databinding.ViewItemCoinBinding
-import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

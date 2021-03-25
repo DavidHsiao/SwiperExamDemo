@@ -4,7 +4,6 @@ import android.example.com.swiperexamdemo.data.VoucherDataStructure
 import android.example.com.swiperexamdemo.data.WalletDataStructure
 import android.example.com.swiperexamdemo.wallet.subFragVoucher.WalletVoucherAdapter
 import android.example.com.swiperexamdemo.wallet.subFragWallet.WalletCoinAdapter
-import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
